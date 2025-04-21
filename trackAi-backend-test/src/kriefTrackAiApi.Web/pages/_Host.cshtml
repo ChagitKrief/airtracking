@@ -1,0 +1,31 @@
+@page "/"
+@namespace kriefTrackAiApi.Web.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blazor Mapbox</title>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <script src="/js/mapbox.js"></script>
+</head>
+
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+    <script>
+        if (window.__geojsonFromSSR && window.__mapboxTokenFromSSR) {
+            window.initMapbox(window.__mapboxTokenFromSSR, window.__geojsonFromSSR);
+        }
+    </script>
+
+    <base href="/" />
+    <script src="_framework/blazor.server.js"></script>
+</body>
+
+</html>

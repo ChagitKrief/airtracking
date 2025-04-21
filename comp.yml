@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  # airtracking_api:
+  #   container_name: airtracking_api
+  #   # image: trackai-trackai_api:latest
+  #   build:
+  #     context: ./trackAi-backend-test
+  #     dockerfile: dockerfile
+  #   ports:
+  #     - "6060:6060"
+  #   networks:
+  #     - db_db-layer-network
+  #     - airtracking
+  #     - orchestrator
+  #   env_file:
+  #     - .env
+
+  airtracking:
+    container_name: airtracking
+    build:
+      context: ./track-ai-fronted-test
+      dockerfile: dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL}
+        VITE_BLAZOR_MAPBOX_URL: ${VITE_BLAZOR_MAPBOX_URL}
+    environment:
+      - VITE_API_BASE_URL=${VITE_API_BASE_URL}
+      - VITE_BLAZOR_MAPBOX_URL=${VITE_BLAZOR_MAPBOX_URL}
+    ports:
+      - "6061:6061"
+    networks:
+      - airtracking
+    # depends_on:
+    #   - airtracking_api
+
+networks:
+  db_db-layer-network:
+    external: true
+  airtracking:
+    driver: bridge
+  orchestrator:
+    external: true
