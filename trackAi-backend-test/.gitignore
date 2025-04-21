@@ -1,0 +1,71 @@
+*.pdb
+*.dll
+*.json
+*cache
+*.cache
+*.txt
+
+
+# Visual Studio and Rider files
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.dictates
+*.sln.cache
+
+# Build artifacts
+bin/
+obj/
+out/
+Debug/
+Release/
+testResults/
+
+# ASP.NET specific
+wwwroot/node_modules/
+wwwroot/lib/
+
+# User settings
+*.config
+*.log
+*.tlog
+*.csproj.user
+*.db
+*.sqlite
+appsettings.*.json
+
+# Dependency directories
+node_modules/
+packages/
+bower_components/
+
+# Rider / VS Code
+*.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Resharper
+*.DotSettings.user
+
+# NuGet Packages
+*.nupkg
+project.lock.json
+project.assets.json
+NuGet.Config
+NuGetScratch/
+
+# Entity Framework Migrations
+Migrations/
+*.bak
+*.mdf
+*.ldf
+
+# Logs
+logs/
+*.log
+*.log.*
+
